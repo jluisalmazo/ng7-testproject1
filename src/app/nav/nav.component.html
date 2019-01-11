@@ -3,9 +3,9 @@
     <a routerLink="/" class="logo">{{ this.appTitle }}</a>
     <nav>
       <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/about">About</a></li>
-        <li><a routerLink="/contact">Contact us</a></li>
+        <li><a routerLink="/" [class.activated]="currentUrl == '/'">Home</a></li>
+        <li><a routerLink="/about" [class.activated]="currentUrl == '/about'">About</a></li>
+        <li><a routerLink="/contact" [class.activated]="currentUrl == '/contact'">Contact us</a></li>
       </ul>
     </nav>
   </div>
