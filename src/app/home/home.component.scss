@@ -3,21 +3,31 @@ ul {
     margin: 0;padding: 0;
 
     li {
-        background: rgba(238, 238, 238, 0.5);
+        //background: rgba(238, 238, 238, 0.5);
+        background-color: white;
         padding: 2em;
         border-radius: 4px;
         margin-bottom: 7px;
         // display: grid;
         // grid-template-columns: 60px auto;
 
-        p {
-            margin-left: 20px;
-
-            &.name {
-                font-weight: bold;
-                color: #00A8FF;;
-            }
+        a.name {
+            font-weight: bold;
+            color: #00A8FF;
         }
+        
+        a.website {
+            color: #00A8FF;
+        }
+
+        // p {
+        //     margin-left: 20px;
+
+        //     &.name {
+        //         font-weight: bold;
+        //         color: #00A8FF;;
+        //     }
+        // }
 
         // img {
         //     border-radius: 50%;
