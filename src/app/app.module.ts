@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserPostsComponent } from './user-posts/user-posts.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    UserPostsComponent
   ],
   imports: [
     BrowserModule,

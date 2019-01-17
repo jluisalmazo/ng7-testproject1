@@ -3,35 +3,28 @@ ul {
     margin: 0;padding: 0;
 
     li {
-        //background: rgba(238, 238, 238, 0.5);
         background-color: white;
         padding: 2em;
         border-radius: 4px;
         margin-bottom: 7px;
         // display: grid;
-        // grid-template-columns: 60px auto;
+        // grid-template-columns: repeat(3, 1fr);
 
-        a.name {
-            font-weight: bold;
-            color: #00A8FF;
-        }
-        
-        a.website {
-            color: #00A8FF;
+        & > div, a {
+            margin-bottom: 10px;
         }
 
-        // p {
-        //     margin-left: 20px;
+        a {
+            display: block;
+            color: #00A8FF;
 
-        //     &.name {
-        //         font-weight: bold;
-        //         color: #00A8FF;;
-        //     }
-        // }
+            &.name {
+                font-weight: bold;
+            }
 
-        // img {
-        //     border-radius: 50%;
-        //     width: 100%;
-        // }
+            &.link {
+                font-size: 0.9rem;
+            }
+        }
     }
 }

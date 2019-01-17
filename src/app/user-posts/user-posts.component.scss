@@ -1,0 +1,21 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        background-color: white;
+        padding: 2em;
+        border-radius: 4px;
+        margin-bottom: 7px;
+
+        div {
+            margin-bottom: 10px;
+
+            &.name {
+                color: #00A8FF;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

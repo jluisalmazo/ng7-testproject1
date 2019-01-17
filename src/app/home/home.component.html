@@ -6,7 +6,8 @@
     <!-- <p>{{ user.name }} {{ user.last_name }}</p> -->
   <li *ngFor="let user of users">
     <a routerLink="/userDetail/{{user.id}}" class="name">{{ user.name }}</a>
-    <p class="email">{{ user.email }}</p>
-    <a href="http://{{ user.website }}" class="website">{{ user.website }}</a>
+    <div class="email">{{ user.email }}</div>
+    <a href="http://{{ user.website }}" target="_blank" class="link">{{ user.website }}</a>
+    <a routerLink="/userPosts/{{user.id}}" class="link">See user's posts</a>
   </li>
 </ul>

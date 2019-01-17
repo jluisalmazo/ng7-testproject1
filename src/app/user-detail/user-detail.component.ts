@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Observable } from 'rxjs';
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -10,15 +9,14 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class UserDetailComponent implements OnInit {
 
+  userId: number;
   user$: Object;
   
   constructor(private route: ActivatedRoute, private data: DataService) { 
-     this.route.params.subscribe( params => this.user$ = params.id );
+    this.route.params.subscribe(params => this.userId = params.id);
   }
 
   ngOnInit() {
-    this.data.getUser(this.user$).subscribe(
-      data => this.user$ = data 
-    );
+    this.data.getUser(this.userId).subscribe(data => this.user$ = data);
   }
 }
