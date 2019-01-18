@@ -34,3 +34,37 @@ section {
     margin: 0 auto;
     padding: 2em;
 }
+
+.btn-back {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 3px 10px;
+    margin: 0;
+    border: 0;
+    font-size: 14px;
+    font-weight: 400;
+    outline: none !important;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 5px !important;
+    transition: background-color .5s ease-in-out;
+    &::before{
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // text-align: center;
+        // width: 100%;
+        // height: 100%;
+        font-size: 26px;
+        margin-right: 10px;
+        color:  #00A8FF;
+        content: '\276E'; // back arrow icon
+    }
+    &:hover{
+        background-color: #FFF;
+    }
+}

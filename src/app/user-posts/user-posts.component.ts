@@ -1,18 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from "@angular/router";
+import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
+import { Location } from '@angular/common';
 
 
 @Component({
   selector: 'app-user-posts',
   templateUrl: './user-posts.component.html',
-  styleUrls: ['./user-posts.component.scss']
+  styleUrls: ['./user-posts.component.scss'],
+  animations: [
+    trigger('listStagger', [
+      transition('* <=> *', [
+        query(
+          ':enter',
+          [
+            style({ opacity: 0, transform: 'translateY(-15px)' }),
+            stagger(
+              '50ms',
+              animate(
+                '550ms ease-out',
+                style({ opacity: 1, transform: 'translateY(0px)' })
+              )
+            )
+          ],
+          { optional: true }
+        ),
+        query(':leave', animate('50ms', style({ opacity: 0 })), {
+          optional: true
+        })
+      ])
+    ])
+  ]
 })
 export class UserPostsComponent implements OnInit {
 
   userPosts$: Object;
+  userName: string;
 
-  constructor(private route: ActivatedRoute, private data: DataService) {}
+  constructor(private route: ActivatedRoute, private _location: Location, private data: DataService) {}
 
   ngOnInit() {
 
@@ -23,9 +49,14 @@ export class UserPostsComponent implements OnInit {
     // This strategy will not work if the parameter changes within the same component.
     // More explicitly, going from animals/dog to animals/cat will not destroy and initialize the AnimalComponent so ngOnInit method doesn’t get called a second time.
     
+    this.userName = this.route.snapshot.paramMap.get("username");
     const userId = this.route.snapshot.paramMap.get("id");
 
     this.data.getUserPosts(userId).subscribe(data => this.userPosts$ = data);
+  }
+
+  gotoPreviousPage() {
+    this._location.back();
   }
 
 }

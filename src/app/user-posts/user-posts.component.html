@@ -1,8 +1,11 @@
 <div *ngIf="userPosts$">
-  <h1>{{ userPosts$['name'] }}</h1>
+  <div class="title">
+    <h1>{{ userName }}'s posts</h1>
+    <button (click)="gotoPreviousPage()" class="btn-back">Back</button>
+  </div>
 
-  <ul *ngFor="let post of userPosts$">
-    <li>
+  <ul [@listStagger]="userPosts$">
+    <li *ngFor="let post of userPosts$">
       <div class="name">{{ post['title'] }}</div>
       <div>{{ post['body'] }}</div>
     </li>
