@@ -1,0 +1,17 @@
+<div *ngIf="userAlbums$">
+  <div class="title">
+    <h1>{{ userName }}'s posts</h1>
+    <button (click)="gotoPreviousPage()" class="btn-back">Back</button>
+  </div>
+
+  <ul [@listStagger]="userAlbums$">
+    <li *ngFor="let album of userAlbums$">
+      <div class="name">{{ album['title'] }}</div>
+      <ul class="photos">
+        <li *ngFor="let photo of album['photos']">
+          <img src="{{ photo.thumbnailUrl }}">
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,4 +1,4 @@
-<h1>Usuarios registrados</h1>
+<h1>Authors</h1>
 
 <ul *ngIf="users" [@listStagger]="users">
   <!-- <li *ngFor="let user of users['data']"> -->
@@ -8,6 +8,7 @@
     <a routerLink="/userDetail/{{user.id}}" class="name">{{ user.name }}</a>
     <div class="email">{{ user.email }}</div>
     <a href="http://{{ user.website }}" target="_blank" class="link">{{ user.website }}</a>
-    <a routerLink="/userPosts/{{user.id}}/{{user.name}}" class="link">See user's posts</a>
+    <a routerLink="/userAlbums/{{user.id}}/{{user.name}}" class="link">See author's Albums</a>
+    <a routerLink="/userPosts/{{user.id}}/{{user.name}}" class="link">See author's posts</a>
   </li>
 </ul>
